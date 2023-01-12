@@ -28,30 +28,19 @@ const TodoItem = (props) => {
         onKeyPress={(e) => update(item.id, inputRef.current.value, e)}
       />
       <div className="btns">
-        <button
-          whileHover={{ scale: 1.4 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => changeFocus()}
-        >
+        <button onClick={() => changeFocus()}>
           {" "}
           <AiFillEdit />{" "}
         </button>
         {item.completed === false && (
           <button
-            whileHover={{ scale: 1.4 }}
-            whileTap={{ scale: 0.9 }}
             style={{ color: "green" }}
             onClick={() => completeTodo(item.id)}
           >
             <IoCheckmarkDoneSharp />
           </button>
         )}
-        <button
-          whileHover={{ scale: 1.4 }}
-          whileTap={{ scale: 0.9 }}
-          style={{ color: "red" }}
-          onClick={() => removeTodo(item.id)}
-        >
+        <button style={{ color: "red" }} onClick={() => removeTodo(item.id)}>
           {" "}
           <IoClose />
         </button>{" "}
